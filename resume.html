@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Oliver Repaja</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d2d2d;
+            --accent: #6366f1;
+            --text: #4b5563;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary);
+            background: #fff;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            padding: 2cm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 2rem;
+        }
+
+        .header-info h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .header-info h2 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .header-contact {
+            font-size: 0.9rem;
+            color: var(--text);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .bio-text {
+            color: var(--text);
+            font-style: italic;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        /* Grid */
+        .two-col {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Experience/Projects */
+        .project-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .project-tag {
+            color: var(--accent);
+            font-size: 0.85rem;
+            background: #eef2ff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .project-desc {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        /* Skills/Services */
+        .skill-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-pill {
+            background: #f3f4f6;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <!-- Assuming user will replace this if they want, or we can link relative -->
+            <img src="img/profile.jpg" alt="Oliver Repaja" class="profile-img">
+            <div class="header-info">
+                <h1>Oliver Repaja</h1>
+                <h2>AI Implementation Specialist & Workflow Architect</h2>
+                <div class="header-contact">
+                    <span>oliverbajadia1126@gmail.com</span>
+                    <span>•</span>
+                    <span>Paranaque City, Philippines</span>
+                    <span>•</span>
+                    <span><a href="https://linkedin.com/in/oliver-repaja" target="_blank"
+                            style="color: inherit; text-decoration: none;">linkedin.com/in/oliver-repaja</a></span>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Summary</div>
+            <p class="bio-text">
+                Specialist in bridging the gap between human intuition and machine execution. I architect "Self-Driving
+                Business Structures" and sell outcomes, not software (the Anti-SaaS approach). Using a combination of
+                strategic planning (The Brain), workflow automation
+                (The Nervous System), and deterministic execution (The Hands), I build systems that scale autonomously.
+                My "Vibe Coding" philosophy pushes complexity into reliable, testable code via deep integrations and AI
+                orchestration.
+            </p>
+        </section>
+
+        <div class="two-col">
+            <div class="main-col">
+                <section>
+                    <div class="section-title">Key Projects</div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <span class="project-title">NodalNexus: Automated AI Agency (AAA)</span>
+                            <span class="project-tag">Architecture Case Study</span>
+                        </div>
+                        <div class="project-desc">
+                            Designed and implemented an autonomous operating system for an AI Agency.
+                        </div>
+                        <ul>
+                            <li><strong>3-Layer Architecture</strong>: Separated intent (Directives) from orchestration
+                                (Brain) and execution (Scripts).</li>
+                            <li><strong>Self-Annealing Loop</strong>: Built an "immune system" where agents detect
+                                failures, debug code, and update their own SOPs automatically.</li>
+                            <li><strong>Tech Stack</strong>: Antigravity, n8n, Python, MCP Servers.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <span class="project-title">Profitex AI: The AI SDR</span>
+                            <span class="project-tag">Implementation</span>
+                        </div>
+                        <div class="project-desc">
+                            An enterprise-grade B2B lead generation and outreach system.
+                        </div>
+                        <ul>
+                            <li><strong>Deliverability</strong>: Automated warming and rotation of 50+ sender domains.
+                            </li>
+                            <li><strong>Waterfall Enrichment</strong>: Multi-layered data scraping (Apollo → Snov.io →
+                                Manual) to guarantee valid contacts.</li>
+                            <li><strong>Business Model</strong>: Configured performance-based billing using Stripe
+                                integrations ($1,000 Setup + $150/meeting).</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <span class="project-title">Becandify AI: Video Recruitment Platform</span>
+                            <span class="project-tag">Full-Stack AI</span>
+                        </div>
+                        <div class="project-desc">
+                            Automated candidate screening utilizing async video interviews and AI scoring.
+                        </div>
+                        <ul>
+                            <li><strong>Text-First Analysis</strong>: Utilized Deepgram for millisecond-accurate
+                                transcriptions of video answer clips.</li>
+                            <li><strong>Bias-Free Rubrics</strong>: Forced OpenAI GPT-4 to output deterministic JSON
+                                scoring against a strict requirement schema.</li>
+                            <li><strong>Full-Stack</strong>: Built real-time async communication over Next.js and
+                                Supabase.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="side-col">
+                <section>
+                    <div class="section-title">Core Competencies</div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Architecture</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">System Design</span>
+                            <span class="skill-pill">Workflow Logic</span>
+                            <span class="skill-pill">AI Orchestration</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Technical Stack</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">Next.js</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">n8n</span>
+                            <span class="skill-pill">TypeScript</span>
+                            <span class="skill-pill">Supabase</span>
+                            <span class="skill-pill">Stripe</span>
+                            <span class="skill-pill">Docker</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">AI Models & Platforms</div>
+                        <div class="skill-list">
+                            <span class="skill-pill">OpenAI</span>
+                            <span class="skill-pill">Anthropic</span>
+                            <span class="skill-pill">Deepgram</span>
+                            <span class="skill-pill">Daily.co</span>
+                            <span class="skill-pill">MCP</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
