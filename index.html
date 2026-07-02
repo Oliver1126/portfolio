@@ -1,684 +1,516 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oliver Repaja — AI Engineer</title>
+<meta name="description" content="Oliver Repaja, AI Engineer. I build AI systems, software, and automation that solve real bottlenecks — NodalNexus, PlanSync PH, Nexu AI, and the Ops Dashboard.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-256.png" type="image/png">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oliver Repaja | AI Automation Specialist</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oliver Repaja — AI Engineer">
+<meta property="og:description" content="I build AI systems, software, and automation that solve real bottlenecks — NodalNexus, PlanSync PH, Nexu AI, and the Ops Dashboard.">
+<meta property="og:image" content="og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oliver Repaja — AI Engineer">
+<meta name="twitter:description" content="I build AI systems, software, and automation that solve real bottlenecks.">
+<meta name="twitter:image" content="og-image.jpg">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
-        rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Oliver Repaja",
+  "jobTitle": "AI Engineer",
+  "email": "repajaoliver1126@gmail.com",
+  "url": "https://oliver1126.github.io/portfolio/",
+  "sameAs": ["https://linkedin.com/in/oliver-repaja"],
+  "knowsAbout": ["AI Engineering", "LLM Integration", "Software Development", "Automation"]
+}
+</script>
 
-    <!-- SEO & Social Sharing -->
-    <meta name="description"
-        content="AI Implementation Specialist & Workflow Architect. Building self-driving business structures with NodalNexus, Profitex AI, and Becandify.">
-    <meta property="og:title" content="Oliver Repaja | AI Automation Specialist">
-    <meta property="og:description"
-        content="Bridging the gap between human intuition and machine execution. Explore NodalNexus, Profitex AI, and more.">
-    <meta property="og:image" content="https://oliverrepaja.com/img/og-image.jpg"> <!-- Replace with actual URL -->
-    <meta property="og:url" content="https://oliverrepaja.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oliver Repaja | AI Automation Specialist">
-    <meta name="twitter:description" content="Building self-driving business structures.">
-    <meta name="twitter:image" content="https://oliverrepaja.com/img/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Neutral graphite base — violet is an ACCENT, not an overall tint */
+    --bg:oklch(0.13 0.006 280); --bg-2:oklch(0.18 0.008 280); --bg-3:oklch(0.22 0.01 280);
+    --ink:oklch(0.97 0.004 280); --muted:oklch(0.65 0.012 280);
+    --accent:oklch(0.62 0.20 300); --accent-light:oklch(0.80 0.10 300);
+    --hair:color-mix(in oklch,var(--ink) 12%,transparent);
+    --disp:'Space Grotesk',sans-serif; --sans:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--bg)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+  section{position:relative;z-index:2}
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  /* very subtle ambient glow — small, corner-anchored, not a wash */
+  body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+    radial-gradient(38% 34% at 12% -4%,color-mix(in oklch,var(--accent) 7%,transparent),transparent 60%),
+    radial-gradient(34% 30% at 100% 12%,color-mix(in oklch,var(--accent) 5%,transparent),transparent 62%),
+    var(--bg);
+    animation:drift 30s ease-in-out infinite}
+  @keyframes drift{0%,100%{background-position:0 0}50%{background-position:0 -2%}}
+
+  /* floating pill nav */
+  .nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:80;
+    display:flex;align-items:center;gap:6px;padding:8px 8px 8px 18px;border-radius:999px;
+    background:color-mix(in oklch,var(--bg-2) 78%,transparent);backdrop-filter:blur(16px);
+    border:1px solid var(--hair);box-shadow:0 10px 40px rgba(0,0,0,.45);
+    animation:navIn .55s cubic-bezier(.16,1,.3,1) both}
+  @keyframes navIn{from{opacity:0;transform:translate(-50%,-16px)}to{opacity:1;transform:translate(-50%,0)}}
+  .nav .brand{font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.08em;margin-right:10px;white-space:nowrap}
+  .nav a{font-size:12.5px;font-weight:500;color:var(--muted);padding:9px 14px;border-radius:999px;transition:.25s;white-space:nowrap}
+  .nav a:hover{color:var(--ink);background:color-mix(in oklch,var(--ink) 6%,transparent)}
+  .nav .cta{background:var(--accent);color:var(--bg);font-weight:600}
+  .nav .cta:hover{background:var(--accent-light)}
+  .nav .burger{display:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--hair);background:transparent;
+    color:var(--ink);cursor:pointer;align-items:center;justify-content:center;font-size:16px}
+  .nav-drop{display:none;position:fixed;top:74px;left:50%;transform:translateX(-50%);z-index:79;
+    flex-direction:column;gap:4px;min-width:200px;padding:10px;border-radius:20px;
+    background:color-mix(in oklch,var(--bg-2) 92%,transparent);backdrop-filter:blur(16px);
+    border:1px solid var(--hair);box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nav-drop a{font-size:13.5px;color:var(--muted);padding:11px 16px;border-radius:12px}
+  .nav-drop a:hover{color:var(--ink);background:color-mix(in oklch,var(--ink) 6%,transparent)}
+  .nav-drop.open{display:flex}
+  @media(max-width:640px){
+    .nav a:not(.cta){display:none}
+    .nav .burger{display:flex}
+  }
+
+  /* magnetic buttons */
+  .btn{position:relative;display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;
+    padding:14px 26px;border-radius:999px;font-size:14.5px;transition:transform .18s cubic-bezier(.16,1,.3,1),background .25s,border-color .25s;
+    will-change:transform}
+  .btn.solid{background:var(--accent);color:var(--bg)}
+  .btn.solid:hover{background:var(--accent-light)}
+  .btn.ghost{border:1px solid var(--hair);color:var(--ink)}
+  .btn.ghost:hover{border-color:color-mix(in oklch,var(--accent) 55%,transparent);color:var(--accent-light)}
+
+  /* ---- HERO ---- */
+  .hero{padding:170px 0 90px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(30px,6vw,80px);align-items:center}
+  .fade-up{opacity:0;transform:translateY(20px);animation:fadeUp .65s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes fadeUp{to{opacity:1;transform:none}}
+  .hero-eye{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-light);
+    background:color-mix(in oklch,var(--accent) 14%,transparent);border:1px solid color-mix(in oklch,var(--accent) 35%,transparent);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+  .hero-eye .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-light);box-shadow:0 0 8px var(--accent-light);animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+  .hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(38px,5.4vw,64px);line-height:1.05;letter-spacing:-.01em;margin:0 0 20px}
+  .hero h1 span{color:var(--accent-light)}
+  .hero p.lede{color:var(--muted);font-size:17.5px;max-width:52ch;margin:0 0 32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-size:12.5px;color:var(--muted);border:1px solid var(--hair);padding:6px 13px;border-radius:999px}
+
+  .hero-photo-wrap{position:relative;justify-self:center;perspective:1000px}
+  .hero-photo{position:relative;width:min(340px,80vw);aspect-ratio:4/5;border-radius:28px;overflow:hidden;
+    border:1px solid color-mix(in oklch,var(--accent) 30%,transparent);transition:transform .35s cubic-bezier(.16,1,.3,1);transform-style:preserve-3d;
+    box-shadow:0 0 0 1px color-mix(in oklch,var(--accent) 12%,transparent),0 30px 80px -20px rgba(0,0,0,.6),0 0 90px -10px color-mix(in oklch,var(--accent) 30%,transparent)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-badge{position:absolute;left:-22px;bottom:26px;background:var(--bg-2);border:1px solid var(--hair);border-radius:16px;padding:12px 18px;
+    box-shadow:0 14px 40px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;animation:floatY 5.5s ease-in-out infinite}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  .hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;flex:none;animation:pulse 1.6s ease-in-out infinite}
+  .hero-badge b{font-family:var(--disp);font-size:12.5px;font-weight:600;display:block}
+  .hero-badge span{font-size:11px;color:var(--muted)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:150px}.hero-photo-wrap{order:-1}}
+
+  .kicker{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-light);margin-bottom:14px}
+  .sec-head{max-width:640px;margin-bottom:56px}
+  .sec-head h2{font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-.01em;margin:0 0 14px}
+  .sec-head p{color:var(--muted);font-size:16px;margin:0}
+
+  .about{padding:0 0 90px;border-bottom:1px solid var(--hair)}
+  .about p{max-width:70ch;color:var(--muted);font-size:16.5px;line-height:1.7;margin:0}
+
+  /* ---- EXPERIENCE: a plain stacked list, distinct from the Approach timeline ---- */
+  .experience{padding:90px 0}
+  .xp-list{display:flex;flex-direction:column;gap:0}
+  .xp-item{padding:24px 0;border-top:1px solid var(--hair)}
+  .xp-item:last-child{border-bottom:1px solid var(--hair)}
+  .xp-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .xp-title{font-family:var(--disp);font-weight:600;font-size:16.5px}
+  .xp-org{color:var(--accent-light);font-size:14px;font-weight:500;margin-left:10px}
+  .xp-date{font-size:12.5px;color:var(--muted);white-space:nowrap;font-family:var(--disp)}
+  .xp-item p{color:var(--muted);font-size:14.5px;max-width:70ch;margin:0}
+
+  /* ---- APPROACH: numbered vertical timeline ---- */
+  .approach{padding:110px 0}
+  .approach-list{position:relative;border-left:1px solid var(--hair);margin-left:26px}
+  .approach-item{position:relative;padding:0 0 56px 46px}
+  .approach-item:last-child{padding-bottom:0}
+  .approach-num{position:absolute;left:-27px;top:-2px;width:52px;height:52px;border-radius:50%;
+    background:var(--bg-2);border:1px solid color-mix(in oklch,var(--accent) 40%,transparent);
+    display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:600;font-size:15px;color:var(--accent-light)}
+  .approach-problem{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+  .approach-item h3{font-family:var(--disp);font-weight:600;font-size:clamp(19px,2.4vw,24px);margin:0 0 10px;line-height:1.3}
+  .approach-item p{color:var(--muted);font-size:15.5px;max-width:62ch;margin:0 0 14px}
+  .approach-solve{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;background:color-mix(in oklch,var(--accent) 10%,transparent);
+    border:1px solid color-mix(in oklch,var(--accent) 26%,transparent);border-radius:12px;padding:10px 16px}
+  .approach-solve b{color:var(--accent-light);font-family:var(--disp);font-weight:600}
+
+  /* ---- WORK: horizontal scroll-snap carousel ---- */
+  .work{padding:110px 0 130px}
+  .work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+  .work-nav{display:flex;gap:10px}
+  .work-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--hair);background:var(--bg-2);color:var(--ink);
+    cursor:pointer;font-size:16px;transition:.25s;display:flex;align-items:center;justify-content:center}
+  .work-nav button:hover{border-color:color-mix(in oklch,var(--accent) 55%,transparent);color:var(--accent-light);transform:translateY(-2px)}
+  .work-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 26px;margin:0 -6px;
+    scrollbar-width:none}
+  .work-track::-webkit-scrollbar{display:none}
+  .wcard{scroll-snap-align:start;flex:0 0 min(700px,88vw);border-radius:22px;overflow:hidden;border:1px solid var(--hair);background:var(--bg-2);
+    display:grid;grid-template-columns:1fr;transition:border-color .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+  .wcard:hover{transform:translateY(-4px)}
+  .wcard:hover{border-color:color-mix(in oklch,var(--accent) 40%,transparent)}
+  .wcard-img{aspect-ratio:16/10;overflow:hidden}
+  .wcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .wcard:hover .wcard-img img{transform:scale(1.035)}
+  .wcard-body{padding:26px 28px 30px}
+  .wcard-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-light);
+    background:color-mix(in oklch,var(--accent) 16%,transparent);border:1px solid color-mix(in oklch,var(--accent) 34%,transparent);
+    padding:4px 11px;border-radius:999px;margin-bottom:14px}
+  .wcard h3{font-family:var(--disp);font-weight:600;font-size:24px;margin:0 0 16px}
+  .wcard-block{margin-bottom:16px}
+  .wcard-block .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px}
+  .wcard-block p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.6}
+  .wcard-stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .wcard-stack span{font-size:11.5px;color:var(--muted);border:1px solid var(--hair);padding:4px 11px;border-radius:999px}
+  .work-dots{display:flex;gap:8px;justify-content:center;margin-top:8px}
+  .work-dots span{width:6px;height:6px;border-radius:50%;background:var(--hair);transition:.3s}
+  .work-dots span.on{background:var(--accent-light);width:20px;border-radius:4px}
+  @media(max-width:640px){.wcard{flex-basis:87vw}}
+
+  /* ---- SKILLS ---- */
+  .skills{padding:0 0 110px}
+  .skill-row{display:flex;flex-wrap:wrap;gap:10px}
+  .skill-pill{font-size:13.5px;color:var(--ink);border:1px solid var(--hair);background:var(--bg-2);padding:9px 18px;border-radius:999px;transition:.25s}
+  .skill-pill:hover{border-color:color-mix(in oklch,var(--accent) 45%,transparent);color:var(--accent-light);transform:translateY(-2px)}
+
+  /* ---- CONTACT ---- */
+  .contact{padding:20px 0 130px}
+  .contact-card{border-radius:28px;padding:clamp(40px,7vw,72px);text-align:center;position:relative;overflow:hidden;
+    background:var(--bg-2);border:1px solid var(--hair)}
+  .contact-card::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 120%,color-mix(in oklch,var(--accent) 20%,transparent),transparent 70%);pointer-events:none}
+  .contact-card .k{position:relative;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-light);margin-bottom:16px}
+  .contact-card h2{position:relative;font-family:var(--disp);font-weight:600;font-size:clamp(30px,5vw,54px);line-height:1.05;letter-spacing:-.01em;margin:0 0 30px}
+  .contact-links{position:relative;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .contact-fallback{position:relative;margin:22px 0 0;font-size:13.5px;color:var(--muted)}
+  .contact-fallback button{font:inherit;color:var(--accent-light);background:none;border:none;border-bottom:1px dashed color-mix(in oklch,var(--accent) 45%,transparent);cursor:pointer;padding:0}
+  .contact-fallback button:hover{color:var(--ink)}
+
+  footer{padding:32px 0 50px;border-top:1px solid var(--hair)}
+  footer .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .fwm{font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.14em}
+  footer .cc{font-size:12px;color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <nav style="position: fixed; top: 0; width: 100%; padding: 1.5rem 2rem; z-index: 100; backdrop-filter: blur(10px);">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="#" style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem;">OR.</a>
-            <div style="display: flex; gap: 2rem;">
-                <a href="#about" style="color: var(--text-secondary); font-size: 0.9rem;">About</a>
-                <a href="#projects" style="color: var(--text-secondary); font-size: 0.9rem;">Projects</a>
-                <a href="#services" style="color: var(--text-secondary); font-size: 0.9rem;">Services</a>
-                <a href="#contact" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book
-                    Discovery</a>
-            </div>
+<nav class="nav">
+  <span class="brand">OLIVER REPAJA</span>
+  <a href="#experience">Experience</a>
+  <a href="#approach">Approach</a>
+  <a href="#work">Work</a>
+  <a href="resume.html" target="_blank" rel="noopener">Resume</a>
+  <a href="#contact">Contact</a>
+  <a class="cta" href="mailto:repajaoliver1126@gmail.com">Get in touch</a>
+  <button class="burger" id="burgerBtn" aria-label="Menu">&#9776;</button>
+</nav>
+<div class="nav-drop" id="navDrop">
+  <a href="#experience">Experience</a>
+  <a href="#approach">Approach</a>
+  <a href="#work">Work</a>
+  <a href="resume.html" target="_blank" rel="noopener">Resume</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <div class="hero-eye fade-up" style="animation-delay:.03s"><span class="dot"></span> AI Engineer · Builder</div>
+      <h1 class="fade-up" style="animation-delay:.09s">I build AI systems that find the <span>bottleneck</span> and fix it.</h1>
+      <p class="lede fade-up" style="animation-delay:.15s">I design and build AI systems, software, and the automation behind them — end to end, reliable, and explainable. Not slide decks, shipped products.</p>
+      <div class="hero-ctas fade-up" style="animation-delay:.21s">
+        <a class="btn solid magnetic" href="#work">See my work</a>
+        <a class="btn ghost magnetic" href="resume.html" target="_blank" rel="noopener">&#8681; Resume</a>
+        <a class="btn ghost magnetic" href="mailto:repajaoliver1126@gmail.com">Get in touch</a>
+      </div>
+      <div class="hero-chips fade-up" style="animation-delay:.27s">
+        <span class="chip">Claude &amp; OpenAI</span>
+        <span class="chip">Next.js</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">n8n</span>
+        <span class="chip">Supabase</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap fade-up" style="animation-delay:.12s">
+      <div class="hero-photo" id="tiltPhoto">
+        <img src="assets/photo.jpg" alt="Oliver Repaja" onerror="this.onerror=null;this.src='assets/photo-placeholder.jpg'">
+      </div>
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        <span><b>Open to work</b><span>Remote &amp; select projects</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about reveal">
+    <p>I'm based in Parañaque City, Philippines, and I work solo across the full build: architecture, implementation, and launch. I founded NodalNexus to run every project the same way — small stages, one reviewable result per step — so the AI I ship stays reliable once real data hits it. Open to remote roles and select freelance projects.</p>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="sec-head reveal">
+      <div class="kicker">Experience</div>
+      <h2>Where I've built this.</h2>
+    </div>
+    <div class="xp-list">
+
+      <div class="xp-item reveal">
+        <div class="xp-head">
+          <div><span class="xp-title">Founder &amp; AI Engineer</span><span class="xp-org">NodalNexus</span></div>
+          <div class="xp-date">June 2025 — Present</div>
         </div>
-    </nav>
+        <p>Design and build AI systems, software, and automation end to end, working solo from architecture to launch.</p>
+      </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-bg" id="hero-canvas"></div>
-        <div class="container hero-content">
-            <h1 class="fade-in">Oliver Repaja</h1>
-            <h2 class="fade-in delay-100"
-                style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-accent); font-weight: 500;">
-                AI Implementation Specialist & Workflow Architect
-            </h2>
-            <p class="fade-in delay-200">
-                Bridging the gap between human intuition and machine execution. Building self-driving business
-                structures that scale.
-            </p>
-            <div class="fade-in delay-300" style="margin-top: 3rem;">
-                <a href="#projects" class="btn-primary">View My Work</a>
-            </div>
-
-            <!-- Terminal Component -->
-            <div class="terminal-container fade-in delay-300">
-                <div class="terminal-header">
-                    <div class="terminal-dot red"></div>
-                    <div class="terminal-dot yellow"></div>
-                    <div class="terminal-dot green"></div>
-                </div>
-                <div class="terminal-body">
-                    <!-- Lines injected by JS -->
-                </div>
-                <span class="cmd-prefix">></span><span class="cursor"></span>
-            </div>
+      <div class="xp-item reveal">
+        <div class="xp-head">
+          <div><span class="xp-title">Freelancer, n8n Automation Specialist</span></div>
+          <div class="xp-date">Jan 2025 — Feb 2026</div>
         </div>
-    </header>
+        <p>Built automation workflows, process mapping, AI agents, and agentic workflows for clients. API and webhook integration, prompt systems, and RAG / second-brain implementations.</p>
+      </div>
 
-    <!-- Trusted By Section (Social Proof) -->
-    <section class="trusted-by" style="padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-        <div class="container">
-            <p
-                style="text-align: center; color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 1.5rem; letter-spacing: 1px;">
-                TRUSTED BY INNOVATIVE COMPANIES</p>
-            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.6;">
-                <!-- Placeholders for logos -->
-                <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Acme Corp</span>
-                <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">GlobalTech</span>
-                <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Nebula AI</span>
-                <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">StartUp Inc</span>
-            </div>
+      <div class="xp-item reveal">
+        <div class="xp-head">
+          <div><span class="xp-title">Web Designer &amp; Automation Specialist</span><span class="xp-org">GoHighLevel Agency</span></div>
+          <div class="xp-date">Jan 2024 — Dec 2024</div>
         </div>
-    </section>
+        <p>Designed websites and funnels and built automation workflows on the GoHighLevel CRM platform for agency clients.</p>
+      </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title fade-in">Bridging Intent & Execution</h2>
-            <div class="about-grid">
-                <div class="glass-card fade-in delay-200"
-                    style="padding: 1rem; border: 1px solid rgba(99, 102, 241, 0.5); box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);">
-                    <img src="img/profile.jpg" alt="Oliver Repaja"
-                        style="width: 100%; height: auto; border-radius: 8px;">
-                </div>
-                <div class="about-text fade-in">
-                    <h3>The Vibe Coding Philosophy</h3>
-                    <p>
-                        We are entering an era where coding is no longer about syntax, but about
-                        <strong>intent</strong>. My approach, "Vibe Coding," sits at the intersection of human
-                        creativity and agentic precision.
-                    </p>
-                    <p>
-                        While most AI agencies stop at simple chatbots, I architect <strong>Self-Driving Business
-                            Structures</strong>. I don't just automate tasks; I build organisms that can reason, plan,
-                        and execute.
-                    </p>
-                    <p>
-                        My work transforms the "Vibe" (your high-level vision) into deterministic, rock-solid code that
-                        runs your business while you sleep.
-                    </p>
-                </div>
-            </div>
+    </div>
+  </section>
+
+  <section class="approach" id="approach">
+    <div class="sec-head reveal">
+      <div class="kicker">Where I plug in</div>
+      <h2>Every project starts with a bottleneck.</h2>
+      <p>Here's what I actually noticed, and what I built to fix it.</p>
+    </div>
+    <div class="approach-list">
+
+      <div class="approach-item reveal">
+        <div class="approach-num">01</div>
+        <div class="approach-problem">The bottleneck</div>
+        <h3>Recruiters lose hours manually screening CVs</h3>
+        <p>Every batch of resumes gets read one by one, with no consistent way to judge a fit or explain why a candidate was ranked the way they were.</p>
+        <div class="approach-solve">Fixed with <b>Nexu AI</b> — screens and ranks a stack of CVs against a job in minutes, with a written reason for every score.</div>
+      </div>
+
+      <div class="approach-item reveal">
+        <div class="approach-num">02</div>
+        <div class="approach-problem">The bottleneck</div>
+        <h3>Lead and candidate pipelines get lost across spreadsheets and email</h3>
+        <p>No single place to see what's new, what's scored, and what needs a human decision, so good leads go cold.</p>
+        <div class="approach-solve">Fixed with the <b>Ops Dashboard</b> — captures, scores, and organizes the pipeline automatically, with humans approving the calls that matter.</div>
+      </div>
+
+      <div class="approach-item reveal">
+        <div class="approach-num">03</div>
+        <div class="approach-problem">The bottleneck</div>
+        <h3>Planning an event means juggling five apps and a group chat</h3>
+        <p>Guest lists in one place, budget in a spreadsheet, suppliers found through word of mouth, and no single view of the day.</p>
+        <div class="approach-solve">Fixed with <b>PlanSync PH</b> — one app for guests, budget, RSVPs, suppliers, and an AI speech writer. Shipped to the Play Store.</div>
+      </div>
+
+      <div class="approach-item reveal">
+        <div class="approach-num">04</div>
+        <div class="approach-problem">The bottleneck</div>
+        <h3>AI agents are unpredictable and hard to trust with real decisions</h3>
+        <p>Most automation is a black box: it works until it doesn't, and nobody can tell you why.</p>
+        <div class="approach-solve">Fixed by how I run <b>NodalNexus</b> — every AI project is delivered in small, auditable stages, so every result comes with the reasoning behind it.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="work-head">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <div class="kicker">Selected work</div>
+        <h2>Why I built each one, and how.</h2>
+        <p>Drag or scroll sideways. No fictional case studies — everything here is real and running.</p>
+      </div>
+      <div class="work-nav reveal">
+        <button id="wPrev" aria-label="Previous">&#8592;</button>
+        <button id="wNext" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+
+    <div class="work-track" id="workTrack">
+
+      <article class="wcard reveal">
+        <div class="wcard-img"><img src="assets/pages/proj-nodalnexus.jpg" alt="NodalNexus"></div>
+        <div class="wcard-body">
+          <span class="wcard-tag">AI Engineering Studio</span>
+          <h3>NodalNexus</h3>
+          <div class="wcard-block"><div class="lbl">Why I built it</div><p>I kept seeing AI automation that worked in a demo and broke in production. I wanted a way to build AI systems that stay reliable once real data hits them.</p></div>
+          <div class="wcard-block"><div class="lbl">How I built it</div><p>I designed a staged delivery process: every project moves through intake, scope, build, and verification, with one reviewable artifact at each stage, so nothing ships without a paper trail.</p></div>
+          <div class="wcard-stack"><span>Python</span><span>n8n</span><span>Next.js</span><span>MCP Servers</span></div>
         </div>
-    </section>
+      </article>
 
-    <!-- ===== Projects Overview Grid ===== -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title fade-in">Projects</h2>
-            <div class="projects-grid">
-                <!-- NodalNexus Card -->
-                <a href="#nodalnexus" class="project-card indigo fade-in">
-                    <div class="project-card-icon">🧬</div>
-                    <h3>NodalNexus</h3>
-                    <span class="project-tag">Self-Annealing Agentic Ecosystem</span>
-                    <p>The autonomous operating system that powers my entire agency. 3-Layer Architecture with
-                        self-healing infrastructure.</p>
-                </a>
-
-                <!-- Profitex Card -->
-                <a href="#profitex" class="project-card emerald fade-in delay-100">
-                    <div class="project-card-icon">📈</div>
-                    <h3>Profitex AI</h3>
-                    <span class="project-tag">AI Outreach Engine</span>
-                    <p>The AI SDR that books meetings while you sleep. Enterprise automation with concierge management.
-                    </p>
-                </a>
-
-                <!-- Becandify Card -->
-                <a href="#becandify" class="project-card sky fade-in delay-200">
-                    <div class="project-card-icon">🎥</div>
-                    <h3>Becandify AI</h3>
-                    <span class="project-tag">AI Video Interview Platform</span>
-                    <p>Stop watching 50 hours of video interviews. Async interviews with AI scoring and candidate
-                        ranking.</p>
-                </a>
-            </div>
+      <article class="wcard reveal">
+        <div class="wcard-img"><img src="assets/pages/proj-nexu.jpg" alt="Nexu AI"></div>
+        <div class="wcard-body">
+          <span class="wcard-tag">AI System</span>
+          <h3>Nexu AI</h3>
+          <div class="wcard-block"><div class="lbl">Why I built it</div><p>A recruiter I was building for told me she spends hours reading CVs one by one with no consistent way to rank them. That was the moment I decided to build a screener instead of another dashboard feature.</p></div>
+          <div class="wcard-block"><div class="lbl">How I built it</div><p>I used an LLM with structured outputs so every score comes back as a strict, typed result: a number, a grade, and a written reason, not free-form text I'd have to parse by hand.</p></div>
+          <div class="wcard-stack"><span>Claude</span><span>Structured Outputs</span><span>Next.js</span><span>Supabase</span></div>
         </div>
-    </section>
+      </article>
 
-    <!-- ===== Project Detail: NodalNexus ===== -->
-    <section id="nodalnexus" class="project-section indigo-bg">
-        <div class="container">
-            <h2 class="section-title fade-in">NodalNexus</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-secondary);"
-                class="fade-in">
-                The Automated AI Agency (AAA). A self-annealing ecosystem designed to run autonomously.
-            </p>
-
-            <div class="glass-card fade-in" style="margin-bottom: 4rem;">
-                <div style="text-align: center; margin-bottom: 3rem;">
-                    <h3 class="text-gradient">The 3-Layer Architecture</h3>
-                    <p>Pushing complexity into deterministic code for reliability.</p>
-                </div>
-
-                <div class="architecture-diagram">
-                    <div class="arch-layer">
-                        <div class="layer-icon" style="border-color: #a855f7; color: #a855f7;">1</div>
-                        <div class="layer-content">
-                            <h4>The Directive (Layer 1)</h4>
-                            <p>Markdown-based SOPs in the "Brain" repository. The "Intent" layer — defines goals,
-                                inputs, and edge cases in natural language. <br><span
-                                    style="font-size: 0.8rem; color: var(--text-secondary);">Example: `blueprint.md`
-                                    defining the exact outcome of a lead gen campaign.</span></p>
-                        </div>
-                    </div>
-                    <div style="height: 40px; width: 2px; background: rgba(255,255,255,0.1); margin-left: 29px;"></div>
-                    <div class="arch-layer">
-                        <div class="layer-icon" style="border-color: #6366f1; color: #6366f1;">2</div>
-                        <div class="layer-content">
-                            <h4>Orchestration (Layer 2)</h4>
-                            <p><strong>The Nervous System</strong> (n8n). Intelligent routing from intent to tools.
-                                <br><span style="font-size: 0.8rem; color: var(--text-secondary);">Antigravity Manager
-                                    View spawns parallel agents for research and execution.</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div style="height: 40px; width: 2px; background: rgba(255,255,255,0.1); margin-left: 29px;"></div>
-                    <div class="arch-layer">
-                        <div class="layer-icon" style="border-color: #ec4899; color: #ec4899;">3</div>
-                        <div class="layer-content">
-                            <h4>Execution (Layer 3)</h4>
-                            <p><strong>The Hands</strong>. Deterministic Python scripts and MCP servers. <br><span
-                                    style="font-size: 0.8rem; color: var(--text-secondary);">Zero hallucination. Pure,
-                                    testable code that runs on the metal.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Deep Dive: NodalNexus -->
-            <div class="deep-dive-grid">
-                <div class="deep-dive-card fade-in">
-                    <h4>🔍 The Insight</h4>
-                    <p>Traditional agencies hit a "complexity ceiling." Adding more people slows down communication. The
-                        only way to scale is to remove humans from the loop.</p>
-                </div>
-                <div class="deep-dive-card fade-in delay-100">
-                    <h4>⚠️ The Bottleneck</h4>
-                    <ul>
-                        <li><strong>Hallucinations:</strong> LLMs making up API parameters.</li>
-                        <li><strong>State Management:</strong> Losing context in multi-day workflows.</li>
-                        <li><strong>Dependency Hell:</strong> One API change breaking the whole chain.</li>
-                    </ul>
-                </div>
-                <div class="deep-dive-card fade-in delay-200">
-                    <h4>🛠 The Approach</h4>
-                    <ul>
-                        <li><strong>Deterministic Core:</strong> Moving logic from Prompts to Python (Layer 3).</li>
-                        <li><strong>Self-Annealing:</strong> An observer agent that catches errors, rewrites the code,
-                            and updates the SOP automatically.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="about-grid reverse">
-                <div class="about-text fade-in">
-                    <h3>The Self-Annealing Loop</h3>
-                    <p>The defining feature — an "immune system" for your business.</p>
-                    <ul style="list-style: none; margin-left: 1rem; color: var(--text-secondary);">
-                        <li style="margin-bottom: 1rem; position: relative;">
-                            <span style="position: absolute; left: -1.5rem; color: var(--text-accent);">•</span>
-                            <strong>Failure is Signal:</strong> When a script breaks, the system wakes up the Brain.
-                        </li>
-                        <li style="margin-bottom: 1rem; position: relative;">
-                            <span style="position: absolute; left: -1.5rem; color: var(--text-accent);">•</span>
-                            <strong>Auto-Correction:</strong> The agent reads the error, rewrites the code, and updates
-                            the SOP.
-                        </li>
-                        <li style="margin-bottom: 1rem; position: relative;">
-                            <span style="position: absolute; left: -1.5rem; color: var(--text-accent);">•</span>
-                            <strong>Result:</strong> Zero-touch maintenance. The system gets stronger with every error.
-                        </li>
-                    </ul>
-                </div>
-                <div class="interactive-card fade-in delay-200"
-                    style="min-height: 300px; position: relative; border-radius: 16px; overflow: hidden; cursor: pointer;">
-                    <img src="img/self-annealing.jpg" alt="Self-Annealing Loop Visualization"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.1s ease-out;">
-                    <div class="card-glare"></div>
-                </div>
-            </div>
-
-            <div class="stat-grid" style="margin-top: 3rem;">
-                <div class="stat-card fade-in">
-                    <div class="stat-value indigo">3</div>
-                    <div class="stat-label">Architecture Layers</div>
-                </div>
-                <div class="stat-card fade-in delay-100">
-                    <div class="stat-value indigo">0</div>
-                    <div class="stat-label">Human Intervention Required</div>
-                </div>
-                <div class="stat-card fade-in delay-200">
-                    <div class="stat-value indigo">∞</div>
-                    <div class="stat-label">Self-Healing Cycles</div>
-                </div>
-            </div>
-
-            <div class="tech-pills" style="justify-content: center; margin-top: 2rem;">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">n8n</span>
-                <span class="tech-pill">Antigravity</span>
-                <span class="tech-pill">MCP Servers</span>
-                <span class="tech-pill">Markdown SOPs</span>
-            </div>
+      <article class="wcard reveal">
+        <div class="wcard-img"><img src="assets/pages/proj-ops.jpg" alt="Ops Dashboard"></div>
+        <div class="wcard-body">
+          <span class="wcard-tag">Automation &amp; Workflows</span>
+          <h3>Ops Dashboard</h3>
+          <div class="wcard-block"><div class="lbl">Why I built it</div><p>Once leads started coming in, spreadsheets couldn't keep up. Nothing showed status at a glance, and good leads went cold waiting on a reply.</p></div>
+          <div class="wcard-block"><div class="lbl">How I built it</div><p>I built a single dashboard that captures new leads, scores them automatically, and only surfaces the ones that need a human decision, instead of showing everything at once.</p></div>
+          <div class="wcard-stack"><span>Next.js</span><span>Supabase</span><span>n8n</span><span>REST APIs</span></div>
         </div>
-    </section>
+      </article>
 
-    <!-- ===== Project Detail: Profitex AI ===== -->
-    <section id="profitex" class="project-section emerald-bg">
-        <div class="container">
-            <h2 class="section-title fade-in">Profitex AI</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-secondary);"
-                class="fade-in">
-                The AI SDR That Books Meetings While You Sleep. Enterprise automation with concierge management.
-            </p>
-
-            <div class="about-grid">
-                <div class="about-text fade-in">
-                    <h3 style="color: #10b981;">The "Anti-SaaS" Philosophy</h3>
-                    <p>Most tools give you a login and wish you luck. <strong>Profitex sells outcomes, not
-                            software.</strong></p>
-                    <p>We combine enterprise-grade n8n automation with concierge management. You don't learn how to
-                        prompt AI; you just approve the meetings on your dashboard.</p>
-
-                    <h4 style="color: #fff; margin-top: 1.5rem; font-size: 1.1rem;">The Results Dashboard</h4>
-                    <ul style="list-style: none; color: var(--text-secondary); margin-top: 0.5rem;">
-                        <li style="margin-bottom: 0.5rem;">✅ <strong>Enriched:</strong> Deep research on every lead.
-                        </li>
-                        <li style="margin-bottom: 0.5rem;">📩 <strong>Sent:</strong> Hyper-personalized pitches.</li>
-                        <li style="margin-bottom: 0.5rem;">📅 <strong>Booked:</strong> Direct calendar integration.</li>
-                    </ul>
-
-                    <div class="tech-pills" style="margin-top: 2rem;">
-                        <span class="tech-pill">Next.js</span>
-                        <span class="tech-pill">n8n</span>
-                        <span class="tech-pill">Supabase</span>
-                        <span class="tech-pill">Clerk Auth</span>
-                        <span class="tech-pill">Stripe</span>
-                    </div>
-                </div>
-                <div class="glass-card fade-in delay-200"
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2); padding: 3rem;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">📈</div>
-                        <h4 style="color: #10b981;">Performance Pricing</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
-                            $1,000 Setup + $500/mo Retainer<br>
-                            + <strong>$150 per Qualified Meeting</strong>
-                        </p>
-                        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">Clients love paying for results.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Deep Dive: Profitex -->
-            <div class="deep-dive-grid">
-                <div class="deep-dive-card fade-in">
-                    <h4>🔍 The Insight</h4>
-                    <p>SDRs spend 80% of their time on data entry, not selling. Generic AI spam is indistinguishable
-                        from noise and gets ignored.</p>
-                </div>
-                <div class="deep-dive-card fade-in delay-100">
-                    <h4>⚠️ The Bottleneck</h4>
-                    <ul>
-                        <li><strong>Deliverability:</strong> Sending 1000s of cold emails burns domains.</li>
-                        <li><strong>Dirty Data:</strong> Enrichment tools often return invalid emails.</li>
-                    </ul>
-                </div>
-                <div class="deep-dive-card fade-in delay-200">
-                    <h4>🛠 The Approach</h4>
-                    <ul>
-                        <li><strong>Inbox Rotation:</strong> Automated warming and rotation of 50+ sender domains.</li>
-                        <li><strong>Waterfall Enrichment:</strong> Check Apollo → if null, check Snov.io → if null,
-                            scrape manually.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="stat-grid" style="margin-top: 3rem;">
-                <div class="stat-card fade-in">
-                    <div class="stat-value emerald">20-30</div>
-                    <div class="stat-label">Meetings Booked / Month</div>
-                </div>
-                <div class="stat-card fade-in delay-100">
-                    <div class="stat-value emerald">$299</div>
-                    <div class="stat-label">Starting Monthly Price</div>
-                </div>
-                <div class="stat-card fade-in delay-200">
-                    <div class="stat-value emerald">1,000+</div>
-                    <div class="stat-label">Leads Enriched / Month</div>
-                </div>
-            </div>
+      <article class="wcard reveal">
+        <div class="wcard-img"><img src="assets/pages/proj-plansync.jpg" alt="PlanSync PH" style="object-position:top"></div>
+        <div class="wcard-body">
+          <span class="wcard-tag">Software System</span>
+          <h3>PlanSync PH</h3>
+          <div class="wcard-block"><div class="lbl">Why I built it</div><p>I watched people planning weddings juggle five apps and a group chat, with the budget always a guess until the week before the event. I decided a single app was overdue.</p></div>
+          <div class="wcard-block"><div class="lbl">How I built it</div><p>I built it as one product covering guests, budget, RSVPs, and suppliers, and added an AI speech writer since that was the task people dreaded most.</p></div>
+          <div class="wcard-stack"><span>React Native</span><span>Next.js</span><span>Supabase</span><span>Claude</span></div>
         </div>
-    </section>
+      </article>
 
-    <!-- ===== Project Detail: Becandify AI ===== -->
-    <section id="becandify" class="project-section sky-bg">
-        <div class="container">
-            <h2 class="section-title fade-in">Becandify AI</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-secondary);"
-                class="fade-in">
-                The "Anti-Corporate" Recruiting Platform. Stop watching 50 hours of video interviews — let AI do it.
-            </p>
+    </div>
+    <div class="work-dots reveal" id="workDots"></div>
+  </section>
 
-            <div class="about-grid">
-                <div class="glass-card fade-in"
-                    style="display: flex; align-items: center; justify-content: center; background: rgba(14, 165, 233, 0.05); border-color: rgba(14, 165, 233, 0.2);">
-                    <div style="text-align: center;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎥</div>
-                        <h4 style="color: #0ea5e9;">AI Candidate Scoring</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Video + Resume → AI Score (0-100)
-                        </p>
-                    </div>
-                </div>
-                <div class="about-text fade-in delay-100">
-                    <h3 style="color: #0ea5e9;">The AI Scoring Pipeline</h3>
-                    <p>We don't just record video; we understand it. The system uses a multi-stage analysis pipeline:
-                    </p>
+  <section class="skills">
+    <div class="sec-head reveal">
+      <div class="kicker">How I work</div>
+      <h2>The stack I actually use.</h2>
+    </div>
+    <div class="skill-row reveal">
+      <span class="skill-pill">Claude</span><span class="skill-pill">OpenAI</span><span class="skill-pill">Next.js</span>
+      <span class="skill-pill">TypeScript</span><span class="skill-pill">React Native</span><span class="skill-pill">n8n</span>
+      <span class="skill-pill">Supabase</span><span class="skill-pill">Postgres</span><span class="skill-pill">Python</span>
+      <span class="skill-pill">REST APIs</span><span class="skill-pill">Structured Outputs</span><span class="skill-pill">System Architecture</span>
+    </div>
+  </section>
 
-                    <ol
-                        style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
-                        <li style="margin-bottom: 0.5rem;"><strong>Capture:</strong> Candidate records async video
-                            Answer via Daily.co.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Transcribe:</strong> Deepgram converts audio to text
-                            with millisecond accuracy.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Analyze:</strong> OpenAI GPT-4o compares the
-                            transcript + resume against the Job Description.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Score:</strong> Generates a 0-100 match score and
-                            specific interview summary.</li>
-                    </ol>
+  <section class="contact" id="contact">
+    <div class="contact-card reveal">
+      <div class="k">Open to remote roles and select projects</div>
+      <h2>Have something to build?</h2>
+      <div class="contact-links">
+        <a class="btn solid magnetic" href="mailto:repajaoliver1126@gmail.com">Email me</a>
+        <a class="btn ghost magnetic" href="https://linkedin.com/in/oliver-repaja" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost magnetic" href="resume.html" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <p class="contact-fallback">or reach me directly at <button id="copyEmail" data-email="repajaoliver1126@gmail.com">repajaoliver1126@gmail.com</button></p>
+    </div>
+  </section>
 
-                    <div class="tech-pills">
-                        <span class="tech-pill">Next.js 14</span>
-                        <span class="tech-pill">Supabase</span>
-                        <span class="tech-pill">Daily.co</span>
-                        <span class="tech-pill">Deepgram</span>
-                        <span class="tech-pill">OpenAI</span>
-                    </div>
-                </div>
-            </div>
+  <footer>
+    <div class="row">
+      <span class="fwm">OLIVER REPAJA</span>
+      <span class="cc">Created by Oliver Repaja</span>
+    </div>
+  </footer>
+</div>
 
-            <!-- Deep Dive: Becandify -->
-            <div class="deep-dive-grid">
-                <div class="deep-dive-card fade-in">
-                    <h4>🔍 The Insight</h4>
-                    <p>Resumes are poor proxies for soft skills, but live interviews are unscalable time sinks for
-                        founders.</p>
-                </div>
-                <div class="deep-dive-card fade-in delay-100">
-                    <h4>⚠️ The Bottleneck</h4>
-                    <ul>
-                        <li><strong>Video Latency:</strong> Processing heavy video files in real-time is expensive.</li>
-                        <li><strong>Bias:</strong> Ensuring AI doesn't penalize accents or background noise.</li>
-                    </ul>
-                </div>
-                <div class="deep-dive-card fade-in delay-200">
-                    <h4>🛠 The Approach</h4>
-                    <ul>
-                        <li><strong>Text-First Analysis:</strong> We don't analyze pixels; we analyze semantic
-                            transcriptions (Deepgram).</li>
-                        <li><strong>Rubric Scoring:</strong> Forcing the LLM to score against a strict JSON schema, not
-                            "vibes."</li>
-                    </ul>
-                </div>
-            </div>
+<script>
+  // copy email fallback (in case mailto: has no configured client)
+  const copyBtn = document.getElementById('copyEmail');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(copyBtn.dataset.email).then(() => {
+        const original = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = original; }, 1500);
+      });
+    });
+  }
 
-            <div class="stat-grid" style="margin-top: 3rem;">
-                <div class="stat-card fade-in">
-                    <div class="stat-value sky">0-100</div>
-                    <div class="stat-label">AI Candidate Score</div>
-                </div>
-                <div class="stat-card fade-in delay-100">
-                    <div class="stat-value sky">24/7</div>
-                    <div class="stat-label">Async Interviews</div>
-                </div>
-                <div class="stat-card fade-in delay-200">
-                    <div class="stat-value sky">GDPR</div>
-                    <div class="stat-label">Compliant by Design</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const navDrop = document.getElementById('navDrop');
+  burger.addEventListener('click', () => navDrop.classList.toggle('open'));
+  navDrop.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navDrop.classList.remove('open')));
+  document.addEventListener('click', (e) => {
+    if (!navDrop.contains(e.target) && !burger.contains(e.target)) navDrop.classList.remove('open');
+  });
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title fade-in">Core Services</h2>
-            <div class="services-grid">
-                <!-- Service 1: Strategy -->
-                <div class="service-card fade-in">
-                    <div class="service-icon">🧠</div>
-                    <h3>Strategy & Architecture</h3>
-                    <p>
-                        "The Brain." Market research, technical specifications, and converting business intent into
-                        executable directives.
-                    </p>
-                </div>
+  // scroll reveal, staggered
+  const revealEls = [...document.querySelectorAll('.reveal')];
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const i = [...e.target.parentElement.children].indexOf(e.target);
+        e.target.style.transitionDelay = (Math.min(i,6) * 0.045) + 's';
+        e.target.classList.add('in');
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => obs.observe(el));
 
-                <!-- Service 2: Automation -->
-                <div class="service-card fade-in delay-100">
-                    <div class="service-icon">⚡</div>
-                    <h3>Workflow Automation</h3>
-                    <p>
-                        "The Hands." Building robust n8n workflows and Python scripts that execute tasks with
-                        deterministic reliability.
-                    </p>
-                </div>
+  // magnetic buttons
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width/2, y = e.clientY - r.top - r.height/2;
+      btn.style.transform = `translate(${x*0.16}px, ${y*0.2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
 
-                <!-- Service 3: Marketing -->
-                <div class="service-card fade-in delay-200">
-                    <div class="service-icon">📢</div>
-                    <h3>Content Engines</h3>
-                    <p>
-                        "The Voice." Automated repurposing pipelines and hyper-personalized outreach systems that scale
-                        your presence.
-                    </p>
-                </div>
+  // hero photo tilt
+  const tilt = document.getElementById('tiltPhoto');
+  if (tilt) {
+    document.addEventListener('mousemove', (e) => {
+      const r = tilt.getBoundingClientRect();
+      const cx = r.left + r.width/2, cy = r.top + r.height/2;
+      const dx = (e.clientX - cx) / r.width, dy = (e.clientY - cy) / r.height;
+      tilt.style.transform = `rotateY(${dx*6}deg) rotateX(${-dy*6}deg)`;
+    });
+  }
 
-                <!-- Service 4: Financial -->
-                <div class="service-card fade-in delay-300">
-                    <div class="service-icon">💎</div>
-                    <h3>ROI & Systems</h3>
-                    <p>
-                        "The Verification." Token-based billing pipelines and Proof-of-Work artifact generation for
-                        complete transparency.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack Marquee -->
-    <section class="tech-stack fade-in">
-        <div class="marquee-container">
-            <!-- Duplicate content for infinite scroll effect (2 sets) -->
-            <span class="marquee-item">NodalNexus</span>
-            <span class="marquee-item">Python</span>
-            <span class="marquee-item">n8n</span>
-            <span class="marquee-item">TypeScript</span>
-            <span class="marquee-item">OpenAI</span>
-            <span class="marquee-item">Anthropic</span>
-            <span class="marquee-item">Stripe</span>
-            <span class="marquee-item">Docker</span>
-
-            <span class="marquee-item">NodalNexus</span>
-            <span class="marquee-item">Python</span>
-            <span class="marquee-item">n8n</span>
-            <span class="marquee-item">TypeScript</span>
-            <span class="marquee-item">OpenAI</span>
-            <span class="marquee-item">Anthropic</span>
-            <span class="marquee-item">Stripe</span>
-            <span class="marquee-item">Docker</span>
-        </div>
-    </section>
-
-
-
-    <!-- NodalTalent Case Study -->
-    <section id="nodaltalent" class="case-study-alt" style="padding: 6rem 0;">
-        <div class="container">
-            <h2 class="section-title fade-in">Case Study: NodalTalent</h2>
-            <div class="about-grid">
-                <div class="about-text fade-in">
-                    <h3>AI for Recruitment</h3>
-                    <p>
-                        Recruiters spend 20+ hours a week reading irrelevant resumes. NodalTalent solves this by
-                        deploying autonomous <strong>Screener Agents</strong>.
-                    </p>
-                    <p>
-                        The system parses 1,000+ PDFs/hour, ranks candidates against the Job Description, and even
-                        handles rejection emails automatically.
-                    </p>
-                    <div class="stat-grid">
-                        <div class="stat-card">
-                            <div class="stat-value">30x</div>
-                            <div class="stat-label">ROI vs Human</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">24/7</div>
-                            <div class="stat-label">Operation</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">0%</div>
-                            <div class="stat-label">Hallucination</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card fade-in delay-200"
-                    style="display: flex; align-items: center; justify-content: center; background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2);">
-                    <div style="text-align: center;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎯</div>
-                        <h4 style="color: #10b981;">The Hunter Agent</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Autonomous Outbound Sourcing</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </section>
-
-    <!-- Latest Insights Section -->
-    <section id="insights" style="background: rgba(255,255,255,0.02);">
-        <div class="container">
-            <h2 class="section-title fade-in">Latest Insights</h2>
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <!-- Blog Card 1 -->
-                <a href="#" class="service-card fade-in" style="text-align: left; opacity: 0.8; cursor: default;">
-                    <span
-                        style="font-size: 0.8rem; color: var(--text-accent); text-transform: uppercase; letter-spacing: 1px;">Philosophy</span>
-                    <h3 style="margin-top: 1rem; font-size: 1.4rem;">The Era of "Vibe Coding"</h3>
-                    <p>Why modern coding is shifting from syntax to intent, and how natural language is becoming the new
-                        compiler.</p>
-                </a>
-                <!-- Blog Card 2 -->
-                <a href="#" class="service-card fade-in delay-100"
-                    style="text-align: left; opacity: 0.8; cursor: default;">
-                    <span
-                        style="font-size: 0.8rem; color: #10b981; text-transform: uppercase; letter-spacing: 1px;">Strategy</span>
-                    <h3 style="margin-top: 1rem; font-size: 1.4rem;">Building Self-Annealing Orgs</h3>
-                    <p>How to design business structures that heal themselves. Exploring the "Failure is Signal" loop.
-                    </p>
-                </a>
-                <!-- Blog Card 3 -->
-                <a href="#" class="service-card fade-in delay-200"
-                    style="text-align: left; opacity: 0.8; cursor: default;">
-                    <span
-                        style="font-size: 0.8rem; color: #0ea5e9; text-transform: uppercase; letter-spacing: 1px;">Future</span>
-                    <h3 style="margin-top: 1rem; font-size: 1.4rem;">Beyond Chatbots: Agentic AI</h3>
-                    <p>Moving from "Chat with PDF" to "Go do this job." The rise of autonomous agents in the enterprise.
-                    </p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ROI Calculator -->
-    <section id="roi-calculator" style="padding: 6rem 0;">
-        <div class="container">
-            <div class="glass-card fade-in" style="max-width: 800px; margin: 0 auto; padding: 3rem;">
-                <h2 class="section-title" style="margin-bottom: 2rem;">Calculate Your Automation Potential</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-                    <div>
-                        <div style="margin-bottom: 2rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Hours
-                                spent on manual tasks (per week)</label>
-                            <input type="range" id="hoursInput" min="0" max="100" value="20"
-                                style="width: 100%; accent-color: #6366f1;">
-                            <span id="hoursValue" style="font-size: 1.5rem; font-weight: 700; color: #fff;">20</span>
-                            <span style="color: var(--text-secondary);">hrs/week</span>
-                        </div>
-                        <div>
-                            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Average
-                                Hourly Rate ($)</label>
-                            <input type="range" id="rateInput" min="20" max="500" value="50" step="10"
-                                style="width: 100%; accent-color: #6366f1;">
-                            <span id="rateValue" style="font-size: 1.5rem; font-weight: 700; color: #fff;">$50</span>
-                            <span style="color: var(--text-secondary);">/hr</span>
-                        </div>
-                    </div>
-                    <div
-                        style="text-align: center; padding: 2rem; background: rgba(99, 102, 241, 0.1); border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2);">
-                        <p
-                            style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-secondary);">
-                            Potential Annual Savings</p>
-                        <div id="savingsValue"
-                            style="font-size: 3.5rem; font-weight: 700; color: #6366f1; margin: 1rem 0;">$52,000</div>
-                        <a href="#contact" class="btn-primary" style="font-size: 0.9rem;">Start Saving Today</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" style="padding-bottom: 8rem;">
-        <div class="container contact-card glass-card fade-in">
-            <h2 class="section-title" style="margin-bottom: 1.5rem;">Ready to Automate?</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-                Let's discuss how we can build a self-driving architecture for your business.
-            </p>
-            <a href="mailto:contact@oliverrepaja.com" class="btn-primary">Get in Touch</a>
-        </div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/oliver-repaja" class="social-icon" title="LinkedIn" target="_blank"
-                rel="noopener noreferrer">in</a>
-            <a href="#" class="social-icon" title="GitHub">gh</a>
-            <a href="https://web.facebook.com/olysaiautomation/" class="social-icon" title="Facebook" target="_blank"
-                rel="noopener noreferrer">fb</a>
-        </div>
-        <footer style="text-align: center; margin-top: 4rem; color: var(--text-secondary); font-size: 0.8rem;">
-            &copy; 2026 Oliver Repaja. Built with NodalNexus.
-        </footer>
-    </section>
-
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+  // horizontal work carousel: arrows + dots
+  const track = document.getElementById('workTrack');
+  const cards = [...track.children];
+  const dotsWrap = document.getElementById('workDots');
+  cards.forEach((_, i) => {
+    const d = document.createElement('span');
+    if (i === 0) d.classList.add('on');
+    d.addEventListener('click', () => cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' }));
+    dotsWrap.appendChild(d);
+  });
+  const dots = [...dotsWrap.children];
+  const cardWidth = () => cards[0].getBoundingClientRect().width + 24;
+  document.getElementById('wNext').addEventListener('click', () => track.scrollBy({ left: cardWidth(), behavior: 'smooth' }));
+  document.getElementById('wPrev').addEventListener('click', () => track.scrollBy({ left: -cardWidth(), behavior: 'smooth' }));
+  track.addEventListener('scroll', () => {
+    const idx = Math.round(track.scrollLeft / cardWidth());
+    dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+  }, { passive: true });
+</script>
+</body></html>
