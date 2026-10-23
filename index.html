@@ -178,6 +178,12 @@
   .wcard-block p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.6}
   .wcard-stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .wcard-stack span{font-size:11.5px;color:var(--muted);border:1px solid var(--hair);padding:4px 11px;border-radius:999px}
+  .wcard-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--hair)}
+  .wcard-links a{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid color-mix(in oklch,var(--accent) 40%,transparent);
+    color:var(--accent-light);transition:.25s}
+  .wcard-links a:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  .wcard-links a:focus-visible{outline:2px solid var(--accent-light);outline-offset:2px}
+  .wcard-links .note{font-size:12.5px;color:var(--muted);padding:8px 0}
   .work-dots{display:flex;gap:8px;justify-content:center;margin-top:8px}
   .work-dots span{width:6px;height:6px;border-radius:50%;background:var(--hair);transition:.3s}
   .work-dots span.on{background:var(--accent-light);width:20px;border-radius:4px}
@@ -319,7 +325,7 @@
         <div class="approach-problem">The bottleneck</div>
         <h3>Lead and candidate pipelines get lost across spreadsheets and email</h3>
         <p>No single place to see what's new, what's scored, and what needs a human decision, so good leads go cold.</p>
-        <div class="approach-solve">Fixed with the <b>Ops Dashboard</b> — captures, scores, and organizes the pipeline automatically, with humans approving the calls that matter.</div>
+        <div class="approach-solve">Fixed with the <b>Ops Dashboard</b> — captures leads and uses AI to score and organize the pipeline, with humans approving the calls that matter.</div>
       </div>
 
       <div class="approach-item reveal">
@@ -364,6 +370,7 @@
           <div class="wcard-block"><div class="lbl">Why I built it</div><p>I kept seeing AI automation that worked in a demo and broke in production. I wanted a way to build AI systems that stay reliable once real data hits them.</p></div>
           <div class="wcard-block"><div class="lbl">How I built it</div><p>I designed a staged delivery process: every project moves through intake, scope, build, and verification, with one reviewable artifact at each stage, so nothing ships without a paper trail.</p></div>
           <div class="wcard-stack"><span>Python</span><span>n8n</span><span>Next.js</span><span>MCP Servers</span></div>
+          <div class="wcard-links"><a href="https://www.nodalnexushq.com" target="_blank" rel="noopener">Visit live site &#8599;</a></div>
         </div>
       </article>
 
@@ -375,6 +382,7 @@
           <div class="wcard-block"><div class="lbl">Why I built it</div><p>A recruiter I was building for told me she spends hours reading CVs one by one with no consistent way to rank them. That was the moment I decided to build a screener instead of another dashboard feature.</p></div>
           <div class="wcard-block"><div class="lbl">How I built it</div><p>I used an LLM with structured outputs so every score comes back as a strict, typed result: a number, a grade, and a written reason, not free-form text I'd have to parse by hand.</p></div>
           <div class="wcard-stack"><span>Claude</span><span>Structured Outputs</span><span>Next.js</span><span>Supabase</span></div>
+          <div class="wcard-links"><a href="https://nexu-ai-one.vercel.app" target="_blank" rel="noopener">Visit live site &#8599;</a><a href="https://github.com/Oliver1126/nexu-ai" target="_blank" rel="noopener">View source on GitHub &#8599;</a></div>
         </div>
       </article>
 
@@ -386,6 +394,7 @@
           <div class="wcard-block"><div class="lbl">Why I built it</div><p>Once leads started coming in, spreadsheets couldn't keep up. Nothing showed status at a glance, and good leads went cold waiting on a reply.</p></div>
           <div class="wcard-block"><div class="lbl">How I built it</div><p>I built a single dashboard that captures new leads, scores them automatically, and only surfaces the ones that need a human decision, instead of showing everything at once.</p></div>
           <div class="wcard-stack"><span>Next.js</span><span>Supabase</span><span>n8n</span><span>REST APIs</span></div>
+          <div class="wcard-links"><span class="note">Internal tool behind a login — walkthrough available on request.</span></div>
         </div>
       </article>
 
@@ -397,6 +406,19 @@
           <div class="wcard-block"><div class="lbl">Why I built it</div><p>I watched people planning weddings juggle five apps and a group chat, with the budget always a guess until the week before the event. I decided a single app was overdue.</p></div>
           <div class="wcard-block"><div class="lbl">How I built it</div><p>I built it as one product covering guests, budget, RSVPs, and suppliers, and added an AI speech writer since that was the task people dreaded most.</p></div>
           <div class="wcard-stack"><span>React Native</span><span>Next.js</span><span>Supabase</span><span>Claude</span></div>
+          <div class="wcard-links"><a href="https://web-ten-peach-sgbdw5lr6g.vercel.app" target="_blank" rel="noopener">Visit live site &#8599;</a></div>
+        </div>
+      </article>
+
+      <article class="wcard reveal">
+        <div class="wcard-img"><img src="assets/pages/proj-amore.jpg" alt="Amore Cost" style="object-position:top"></div>
+        <div class="wcard-body">
+          <span class="wcard-tag">Software System</span>
+          <h3>Amore Cost</h3>
+          <div class="wcard-block"><div class="lbl">Why I built it</div><p>Small food businesses in the Philippines mostly price their products with static spreadsheet templates, so they often don't know their real cost per recipe or the margin they're actually making.</p></div>
+          <div class="wcard-block"><div class="lbl">How I built it</div><p>I built a free costing and pricing calculator that needs no signup: enter ingredients once, and ingredient price changes flow through to every recipe's cost and suggested price automatically.</p></div>
+          <div class="wcard-stack"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>Vitest</span></div>
+          <div class="wcard-links"><a href="https://amore-cost.vercel.app" target="_blank" rel="noopener">Visit live site &#8599;</a></div>
         </div>
       </article>
 
